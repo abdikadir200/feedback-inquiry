@@ -1,0 +1,24 @@
+{
+  "feedback": [
+    {
+      "text": "This is the updated feeback item 1 from the bckend",
+      "rating": 2,
+      "id": 1
+    },
+    {
+      "id": 2,
+      "rating": 4,
+      "text": "This is the feeback item 2 from the bckend"
+    },
+    {
+      "id": 3,
+      "rating": 8,
+      "text": "This is the feeback item 3 from the bckend"
+    },
+    {
+      "id": 4,
+      "rating": 6,
+      "text": "This is the feeback item 4 from the bckend"
+    }
+  ]
+}

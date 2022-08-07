@@ -4,9 +4,13 @@ import FeedbackContext from '../context/FeedbackContext'
 
 
 function FeedbackList() {
-  const {feedback} = useContext(FeedbackContext);
+  const {feedback, isLoading} = useContext(FeedbackContext);
+
+  if( !isLoading && (!feedback || feedback.length === 0)){
+    return <p> feedback yet</p>
+  }
   return (
-    <div>
+    <div className='feeback-list'>
         {feedback.map((item, index)=>(
             <FeedbackItem key={index} item={item}/>
         ))};
