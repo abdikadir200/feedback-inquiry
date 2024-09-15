@@ -20,12 +20,12 @@ function FeedbackForm() {
 
     },[editFeedback])
 
-    const handletextChange = (e)=>{
+    const handletextChange = ({ target: { value } })=>{
 
-        if (text === ''){
+        if (value === ''){
             setbtnDisabled(true);
-            setMessage("");
-        }else if (text !== '' && text.trim().length <=10){
+            setMessage(null)
+        }else if (value.trim().length <=10){
             setbtnDisabled(true);
             setMessage("Input must be greater than 10 characters")
         }else {
@@ -33,7 +33,7 @@ function FeedbackForm() {
             setMessage(null);
 
         }
-        settextInput(e.target.value)
+        settextInput(value)
     }
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -50,14 +50,16 @@ function FeedbackForm() {
                 addFeedback(newFeedback);
             }
             settextInput("")
+            setbtnDisabled(true) 
+            setRating(10)
         }
-        ;
+        
     }
   return (
     <Card> 
     <form onSubmit={handleSubmit}>
     <h2> PLease rate us</h2>
-    <RatingSelect select={(rating) =>setRating(rating)}/>
+    <RatingSelect select={setRating} selected={rating}/>
     <div className='input-group'> 
     
     <input 

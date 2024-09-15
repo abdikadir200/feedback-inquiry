@@ -13,7 +13,7 @@ function FeedbackList() {
     <div className='feeback-list'>
         {feedback.map((item, index)=>(
             <FeedbackItem key={index} item={item}/>
-        ))};
+        ))}
     </div>
   )
 }

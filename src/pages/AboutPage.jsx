@@ -19,7 +19,7 @@ function AboutPage() {
     </div>
     </Card>
     
-  );
+  )
 }
 
 export default AboutPage
